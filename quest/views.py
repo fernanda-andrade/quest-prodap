@@ -1,5 +1,6 @@
 #encoding: utf-8
 
+from django.conf import settings
 from django.shortcuts import render
 import csv
 from time import gmtime, strftime
@@ -7,31 +8,37 @@ from time import gmtime, strftime
 
 def quest(request):
     data = {}
+    data["BASE_URL"] = settings.BASE_URL
     return render(request, 'quest.html', data)
 
 
 def quest_nutri(request):
     data = {}
+    data["BASE_URL"] = settings.BASE_URL
     return render(request, 'quest-nutri.html', data)
 
 
 def quest_pg(request):
     data = {}
+    data["BASE_URL"] = settings.BASE_URL
     return render(request, 'quest-pg.html', data)
 
 
 def quest_tech(request):
     data = {}
+    data["BASE_URL"] = settings.BASE_URL
     return render(request, 'quest-tech.html', data)
 
 
 def quest_colab(request):
     data = {}
+    data["BASE_URL"] = settings.BASE_URL
     return render(request, 'quest-colab.html', data)
 
 
 def resp(request):
     data = {}
+    data["BASE_URL"] = settings.BASE_URL
     perguntas = 16
     csv_out = []
     usuario = request.POST["usuario"]
