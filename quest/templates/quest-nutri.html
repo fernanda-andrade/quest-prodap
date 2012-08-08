@@ -1,0 +1,806 @@
+{% extends "base.html" %}
+
+{% block container %}
+<div class="page-header">
+	<h1>Curva de Valores</h1><hr />
+	<h4>A pontuação representa o nível de oferta de cada atributo segundo a percepção dos compradores. Pontuação mais alta significa que a empresa oferece mais aos compradores e, portanto, investe mais no atributo. No caso do preço, pontuação mais alta significa preço mais alto:<br/><br/>1º passo: Você deverá selecionar 1 ou 2 empresas para fazer a avaliação de cada atributo. Escreva o nome dessas empresas no local indicado.<br/>2º passo: Você deverá avaliar cada atributo e pontuar a PRODAP e as empresas selecionadas conforme a classificação. Depois deverá pontuar cada atributo conforme o que consideria que seria o nível de entrega Ideal, na coluna correspondente.<br/><br/>A classificação varia de 0 a 5, conforme abaixo:<br/><br/>0 - Inexistente ou Não Aplicável 1 - Muito Baixo 2 - baixo 3 - Médio 4 - Alto 5 - Muito Alto<br/><br/>Obs.: se você não tiver segurança ao avaliar algum atributo de alguma das empresas listadas, deixe este item em branco.</h4>
+</div>
+<div class="container">
+    <body>
+        <form class="form-horizontal" method="post" action="/resp/">
+        
+        <div class="control-group">
+		<label class="control-label" for="input01"><h4>Nome completo:</h4></label>
+			<div class="controls">
+				<input id="input01" name="p0e1" class="input-xlarge" type="text">
+				<p class="help-block">Digite seu nome idêntico ao nome digitado no questionário.</p>
+			</div>
+                </label>
+	</div>
+
+        <table class="table table-bordered">
+            <tr>
+                <th>Atributos</th>
+                <th>Empresa: PRODAP</th>
+                <th>Empresa:<input class="input-xlarge" type="text" id="input02" name="p0e2" /></th>
+                <th>Empresa:<input class="input-xlarge" type="text" id="input03" name="p0e3" /></th>
+                <th>Ideal<input style="display:none" type="text" name="p0e4" value="Ideal" /></th>
+            </tr>
+
+            <tr>
+                <td>Preço (alto ou baixo)</td>
+                <td>
+                	<select name="p1e1">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p1e2">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p1e3">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p1e4">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>Qualificação da força comercial (capacidade da equipe comercial em relação a prestação de serviços comerciais)</td>
+                <td>
+                	<select name="p2e1">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p2e2">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p2e3">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p2e4">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Facilidade do processo de compra</td>
+                <td>
+                	<select name="p3e1">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p3e2">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p3e3">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p3e4">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Acesso à empresa</td>
+                <td>
+                	<select name="p4e1">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p4e2">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p4e3">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p4e4">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Frequência de Visitas (quantidade de vistas de um agente comercial da empresa à fazenda durante o ano)</td>
+                <td>
+                	<select name="p5e1">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p5e2">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p5e3">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p5e4">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Acompanhamento do uso do produto (gestão de estoque e controle de consumo)</td>
+                <td>
+                	<select name="p6e1">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p6e2">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p6e3">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p6e4">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Serviços Técnicos (manejo de pastagem, formulação de dieta, manejo sanitário, programação de abate, entre outros)</td>
+                <td>
+                	<select name="p7e1">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p7e2">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p7e3">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p7e4">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Disponibilização de ferramentas para suporte à rotina operacional (excel/software)</td>
+                <td>
+                	<select name="p8e1">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p8e2">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p8e3">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p8e4">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Desempenho do produto no processo (qualidade do produto no desempenho do gado)</td>
+                <td>
+                	<select name="p9e1">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p9e2">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p9e3">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p9e4">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Variedade de produtos disponíveis para compra</td>
+                <td>
+                	<select name="p10e1">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p10e2">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p10e3">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p10e4">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Facilidade de escolha do produto (facilidade de escolha dos produtos a serem utilizados na fazenda, sem que haja necessidade de indicação pelo agente comercial)</td>
+                <td>
+                	<select name="p11e1">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p11e2">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p11e3">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p11e4">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Tecnologia e inovação (inclusão de tecnologia no produto, como virginimicina e promotor de crescimento)</td>
+                <td>
+                	<select name="p12e1">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p12e2">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p12e3">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p12e4">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Agilidade na entrega (capacidade da empresa para realizar entregas imediatas quando demanada)</td>
+                <td>
+                	<select name="p13e1">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p13e2">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p13e3">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p13e4">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Entrega no prazo acordado</td>
+                <td>
+                	<select name="p14e1">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p14e2">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p14e3">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p14e4">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Conhecimento da marca</td>
+                <td>
+                	<select name="p15e1">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p15e2">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p15e3">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p15e4">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Relacionamento com o cliente (eventos, viagens, congressos)</td>
+                <td>
+                	<select name="p16e1">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p16e2">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p16e3">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+                <td>
+                	<select name="p16e4">
+                		<option value=->-</option>
+                		<option value=0>0</option>
+                		<option value=1>1</option>
+                		<option value=2>2</option>
+                		<option value=3>3</option>
+                		<option value=4>4</option>
+                		<option value=5>5</option>
+                	</select>
+                </td>
+            </tr>
+
+        </table>
+        <form>
+        	{% csrf_token %}
+            <button class="btn btn-primary" type="submit" value="enviar">Salvar</button>
+        </form>
+    </body>
+</div>
+{% endblock %}
