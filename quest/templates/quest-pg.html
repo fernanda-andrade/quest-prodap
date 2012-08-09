@@ -3,7 +3,11 @@
 {% block container %}
 <div class="page-header">
 	<h1>Curva de Valores</h1><hr />
-	<h4>A pontuação representa o nível de oferta de cada atributo segundo a percepção dos compradores. Pontuação mais alta significa que a empresa oferece mais aos compradores e, portanto, investe mais no atributo. No caso do preço, pontuação mais alta significa preço mais alto:<br/><br/>1º passo: Você deverá selecionar 1 ou 2 empresas para fazer a avaliação de cada atributo. Escreva o nome dessas empresas no local indicado.<br/>2º passo: Você deverá avaliar cada atributo e pontuar a PRODAP e as empresas selecionadas conforme a classificação. Depois deverá pontuar cada atributo conforme o que consideria que seria o nível de entrega Ideal, na coluna correspondente.<br/><br/>A classificação varia de 0 a 5, conforme abaixo:<br/><br/>0 - Inexistente ou Não Aplicável 1 - Muito Baixo 2 - baixo 3 - Médio 4 - Alto 5 - Muito Alto<br/><br/>Obs.: se você não tiver segurança ao avaliar algum atributo de alguma das empresas listadas, deixe este item em branco.</h4>
+	<h4>A pontuação representa o nível de oferta de cada atributo segundo a percepção dos compradores. Pontuação mais alta significa que a empresa oferece mais aos compradores e, portanto, investe mais no atributo. No caso do preço, pontuação mais alta significa preço mais alto:<br/><br/>1º passo: Você deverá selecionar 1 ou 2 empresas para fazer a avaliação de cada atributo. Escreva o nome dessas empresas no local indicado.<br/>2º passo: Você deverá avaliar cada atributo e pontuar a PRODAP e as empresas selecionadas conforme a classificação. Depois deverá pontuar cada atributo conforme o que consideria que seria o nível de entrega Ideal, na coluna correspondente.<br/><br/>A classificação varia de 0 a 5, conforme abaixo:<br/><br/>0 - Inexistente ou Não Aplicável 1 - Muito Baixo 2 - baixo 3 - Médio 4 - Alto 5 - Muito Alto<br/><br/>Obs.: se você não tiver segurança ao avaliar algum atributo de alguma das empresas listadas, deixe este item em branco.<br/>Caso não se sinta apto a pontuar os atributos sobre Consultoria em Gestão, clique em um dos botões abaixo para ser direcionado a outra empresa.</h4>
+        <hr />
+        <a href="{{BASE_URL}}quest/nutri" class="btn btn-primary">Atributos - Nutrição Animal</a>
+        <a href="{{BASE_URL}}quest/tech" class="btn btn-primary">Atributos - Software para Agronegócios</a>
+
 </div>
 <div class="container">
     <body>
@@ -22,8 +26,8 @@
             <tr width="100%">
                 <th width="36%">Atributos</th>
                 <th width="16%">Empresa: PRODAP</th>
-                <th width="16%">Empresa:<input class="input-xlarge" type="text" id="input02" name="p0e2" /></th>
-                <th width="16%">Empresa:<input class="input-xlarge" type="text" id="input03" name="p0e3" /></th>
+                <th width="16%">Empresa:<input type="text" id="input02" name="p0e2" /></th>
+                <th width="16%">Empresa:<input type="text" id="input03" name="p0e3" /></th>
                 <th width="16%">Ideal<input style="display:none" type="text" name="p0e4" value="Ideal" /></th>
             </tr>
 
