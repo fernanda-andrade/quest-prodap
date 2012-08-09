@@ -3,15 +3,19 @@
 {% block container %}
 
 <div class="page-header"><h1>Questionário</h1></div>
-<script src="https://www.surveymonkey.com/jsPop.aspx?sm=x26Wo5zUAu0_2b6_2b9oE0aD8w_3d_3d"> </script>
+
+<div id="surveyMonkeyInfo">
+  <div>
+		<script src="https://www.surveymonkey.com/jsEmbed.aspx?sm=BI9XcToIYei4Sbl7BrGy6g_3d_3d"> </script>
+	</div>
+</div>
+<hr />
 
 <h4>As próximas perguntas são rápidas e objetivas, basta pontuar, seguindo as instruções, cada um dos 
 atributos que aparecerem.</h4>
 
 <hr />
 
-<a href="{{BASE_URL}}quest/nutri" class="btn btn-primary">Atributos - Nutrição Animal</a>
-<a href="{{BASE_URL}}quest/pg" class="btn btn-primary">Atributos - Consultoria em Gestão</a>
-<a href="{{BASE_URL}}quest/tech" class="btn btn-primary">Atributos - Software para Agronegócios</a>
+<a href="{{BASE_URL}}quest/nutri" class="btn btn-primary btn-large">Iniciar</a>
 
 {% endblock %}
