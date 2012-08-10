@@ -55,7 +55,7 @@ MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-BASE_URL = 'http://ec2-23-20-193-104.compute-1.amazonaws.com:8080/'
+BASE_URL = 'http://questionario.prodaptech.com.br/'
 MEDIA_URL = '/media/'
 
 # Absolute path to the directory static files should be collected to.
@@ -66,7 +66,7 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static_files')
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = '/static/'
+STATIC_URL = 'http://static-quest.prodaptech.com.br/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
