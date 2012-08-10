@@ -45,11 +45,15 @@ def resp(request):
     perguntas = 16
     csv_out = []
     usuario = request.POST["usuario"]
+    negocio = request.POST["negocio"]
+    if negocio == '':
+        negocio = "na"
+    
     data_atual = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
     for p in range(0, perguntas + 1):
         respostas = []
-        #respostas.append(empresa)
+        respostas.append(negocio)
         respostas.append(data_atual)
         respostas.append(usuario)
 
