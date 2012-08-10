@@ -56,7 +56,8 @@ def resp(request):
         respostas.append(negocio)
         respostas.append(data_atual)
         respostas.append(usuario)
-
+        respostas.append(p)
+        
         for e in range(1, 5):
             key = "p%se%s" % (str(p), str(e))
             respostas.append(request.POST[key])
@@ -64,7 +65,8 @@ def resp(request):
         csv_out.append(respostas)
 
     arquivo_csv = open('output.csv', "a")
-    writer = csv.writer(arquivo_csv, delimiter='\t', quotechar='"', quoting=csv.QUOTE_ALL)
+    writer = csv.writer(arquivo_csv, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL)
+    
     for r in csv_out:
         writer.writerow(r)
     data['success'] = True
