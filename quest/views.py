@@ -66,12 +66,11 @@ def resp(request):
     data['success'] = True
     return render(request, 'resp.html', data)
 
+    for e in range(1, 5):
+        key = "p%se%s" % (str(p), str(e))
+        respostas.append(request.POST[key])
 
-        for e in range(1, 5):
-            key = "p%se%s" % (str(p), str(e))
-            respostas.append(request.POST[key])
-
-        csv_out.append(respostas)
+    csv_out.append(respostas)
 
     arquivo_csv = open('output.csv', "a")
     writer = csv.writer(arquivo_csv, delimiter='\t', quotechar='"', quoting=csv.QUOTE_ALL)
