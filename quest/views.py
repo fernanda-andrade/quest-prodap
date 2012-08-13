@@ -74,6 +74,6 @@ def resp(request):
     writer = csv.writer(arquivo_csv, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL)
 
     for r in csv_out:
-        writer.writerow([s.encode("utf-8") for s in r])
+        writer.writerow([str(s).encode("utf-8") for s in r])
     data['success'] = True
     return render(request, 'resp.html', data)
