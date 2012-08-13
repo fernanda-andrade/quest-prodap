@@ -62,7 +62,7 @@ def resp(request):
         respostas.append(negocio)
         respostas.append(data_atual)
         respostas.append(usuario)
-        respostas.append(p)
+        respostas.append(str(p))
 
         for e in range(1, 5):
             key = "p%se%s" % (str(p), str(e))
@@ -74,6 +74,6 @@ def resp(request):
     writer = csv.writer(arquivo_csv, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL)
 
     for r in csv_out:
-        writer.writerow([str(s).encode("utf-8") for s in r])
+        writer.writerow([s.encode("latin-1") for s in r])
     data['success'] = True
     return render(request, 'resp.html', data)
