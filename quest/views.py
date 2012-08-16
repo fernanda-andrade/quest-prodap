@@ -70,7 +70,7 @@ def resp(request):
 
         csv_out.append(respostas)
 
-    arquivo_csv = open('/home/ubuntu/dados/prodap.csv', "a")
+    arquivo_csv = open('/home/ubuntu/dados/curvaprodap.csv', "a")
     writer = csv.writer(arquivo_csv, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL)
 
     for r in csv_out:
