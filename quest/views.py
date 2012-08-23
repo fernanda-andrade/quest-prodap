@@ -48,7 +48,7 @@ def resp(request):
     data = {}
     data["BASE_URL"] = settings.BASE_URL
     data["STATIC_URL"] = settings.STATIC_URL
-    perguntas = 16
+    perguntas = 10
     csv_out = []
     usuario = request.POST["usuario"]
     negocio = request.POST["negocio"]
