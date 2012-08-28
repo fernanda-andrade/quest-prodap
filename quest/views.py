@@ -55,10 +55,15 @@ def resp(request):
     if negocio == '':
         negocio = "na"
 
+    ip = request.META['HTTP_X_FORWARDED_FOR']
+    ip2 = request.META['REMOTE_ADDR']
+    
     data_atual = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
     for p in range(0, perguntas + 1):
         respostas = []
+        respostas.append(ip)
+        respostas.append(ip2)
         respostas.append(negocio)
         respostas.append(data_atual)
         respostas.append(usuario)
