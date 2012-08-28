@@ -55,15 +55,13 @@ def resp(request):
     if negocio == '':
         negocio = "na"
 
-    ip = 'x'
-    ip2 = request.META['REMOTE_ADDR']
+    ip = request.META['REMOTE_ADDR']
     
     data_atual = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
     for p in range(0, perguntas + 1):
         respostas = []
         respostas.append(ip)
-        respostas.append(ip2)
         respostas.append(negocio)
         respostas.append(data_atual)
         respostas.append(usuario)
@@ -75,7 +73,7 @@ def resp(request):
 
         csv_out.append(respostas)
 
-    arquivo_csv = open('/home/ubuntu/dados/prodap.csv', "a")
+    arquivo_csv = open('/home/ubuntu/dados/oficial.csv', "a")
     writer = csv.writer(arquivo_csv, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL)
 
     for r in csv_out:
